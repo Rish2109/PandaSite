@@ -271,7 +271,7 @@ export default function HomePage() {
                                 {/* Front */}
                                 <div className="absolute inset-0 [backface-visibility:hidden]">
                                     <Image
-                                        src="/LPanda.png"
+                                        src="/Lpanda.png"
                                         alt="LPANDA"
                                         width={384}
                                         height={384}
