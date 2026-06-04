@@ -247,7 +247,10 @@ export default function HomePage() {
 )}
 
                     {showBamboo && (
-    <div className="block md:hidden absolute bottom-36 left-4 right-4 z-10">
+    <div className="block md:hidden absolute bottom-64 left-4 right-4 z-10">
+
+
+
         <div className="flex justify-center">
             <div className="animate-panda-bounce">
                 <div className="animate-bamboo-float will-change-transform">
@@ -265,7 +268,8 @@ export default function HomePage() {
     </div>
 )}
 
-                    <div className="absolute right-3 top-36 z-10 flex w-52 flex-col items-stretch gap-6 sm:right-6 sm:w-60 sm:gap-8 md:right-10 md:top-32 md:w-72 lg:right-16 lg:w-80 xl:w-96">
+                    {/* Desktop: keep existing positioning (do not change) */}
+                    <div className="hidden md:flex absolute right-3 top-36 z-10 flex w-52 flex-col items-stretch gap-6 sm:right-6 sm:w-60 sm:gap-8 md:right-10 md:top-32 md:w-72 lg:right-16 lg:w-80 xl:w-96">
                         <div className="group relative h-52 w-full overflow-hidden rounded-xl border-4 border-primary/50 transition-all duration-300 [perspective:1000px] hover:border-primary hover:shadow-[0_0_30px_10px_hsl(var(--primary)/0.3)] hover:scale-105 sm:h-60 md:h-72 lg:h-80 xl:h-96">
                             <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                                 {/* Front */}
@@ -321,6 +325,66 @@ export default function HomePage() {
                             Behind The Scenes
                         </Link>
                     </div>
+
+                    {/* Mobile: place below bamboo and just above NFT gallery */}
+                    {showBamboo && (
+                      <div className="block md:hidden absolute left-1/2 -translate-x-1/2 bottom-[2.5rem] z-10 flex w-[15rem] flex-col items-stretch gap-4">
+                        <div className="group relative h-[9.5rem] w-full overflow-hidden rounded-xl border-4 border-primary/50 transition-all duration-300 [perspective:1000px] hover:border-primary hover:shadow-[0_0_30px_10px_hsl(var(--primary)/0.3)] hover:scale-105">
+                          <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            {/* Front */}
+                            <div className="absolute inset-0 [backface-visibility:hidden]">
+                              <Image
+                                src="/Lpanda.png"
+                                alt="LPANDA"
+                                width={384}
+                                height={384}
+                                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
+                              />
+                              <div className="pointer-events-none absolute inset-0 bg-black/20 transition-all duration-300 group-hover:bg-black/10" />
+                            </div>
+
+                            {/* Back */}
+                            <div className="absolute inset-0 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                              <div className="flex h-full w-full flex-col gap-2 bg-black/55 p-3 backdrop-blur-sm overflow-y-auto">
+                                <div className="flex items-center gap-2">
+                                  <span className="inline-flex items-center gap-2 rounded-full bg-purple-600/30 px-3 py-1 text-[0.6rem] font-semibold text-white ring-1 ring-purple-400/40">
+                                    <span className="h-2 w-2 rounded-full bg-white/70" />
+                                    OG Phase Live
+                                  </span>
+                                </div>
+
+                                <div className="space-y-1">
+                                  <div className="text-base sm:text-lg font-extrabold leading-tight text-cyan-300">
+                                    Immortal
+                                  </div>
+                                  <div className="text-base sm:text-lg font-extrabold leading-tight text-white break-words">
+  Laughing Panda
+</div>
+                                  <div className="text-[0.68rem] text-white/85">
+                                    Limited Edition NFT Collection on Base
+                                  </div>
+                                  <div className="text-[0.58rem] text-white/70">
+                                    8 / 150 Minted <span className="mx-1">•</span> 150 Total Supply
+                                  </div>
+                                </div>
+
+                                <p className="hidden text-[0.58rem] leading-relaxed text-white/80">
+                                  Immortal Laughing Panda is a unique generative NFT collection.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <Link
+                          href="/last"
+                          className="w-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-5 py-3.5 text-center text-[0.8rem] font-bold leading-tight tracking-wide text-white no-underline shadow-[0_4px_20px_rgba(6,182,212,0.35)] transition-all duration-300 hover:scale-105 hover:from-blue-400 hover:to-cyan-300 hover:shadow-[0_6px_28px_rgba(6,182,212,0.55)] active:scale-95"
+                        >
+                          Behind The Scenes
+                        </Link>
+                      </div>
+                    )}
+
 
                     <div className="flex flex-col items-center md:items-start gap-6 order-2 md:order-1">
                     </div>
