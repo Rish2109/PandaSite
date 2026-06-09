@@ -128,8 +128,30 @@ export default function HomePage() {
         }
     }
 
+    @keyframes socialFloat {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
     .animate-panda-bounce {
         animation: pandaBounce 1.6s ease-out forwards;
+    }
+
+    .animate-social-float-1 {
+        animation: socialFloat 3s ease-in-out infinite;
+    }
+    .animate-social-float-2 {
+        animation: socialFloat 3s ease-in-out infinite 0.2s;
+    }
+    .animate-social-float-3 {
+        animation: socialFloat 3s ease-in-out infinite 0.4s;
+    }
+    .animate-social-float-4 {
+        animation: socialFloat 3s ease-in-out infinite 0.6s;
     }
 `}</style>
             
@@ -225,33 +247,82 @@ export default function HomePage() {
                 </div>
             </header>
 
+            
             <main className="container mx-auto px-2 md:px-4 pt-8 md:pt-12">
                 <section id="home" className="grid md:grid-cols-2 items-center justify-center py-8 md:py-12 gap-12 text-center md:text-left relative min-h-[100vh]">
                     {showBamboo && (
     <div className="hidden md:block">
-        <div className="absolute bottom-36 left-1/2 -translate-x-1/2 z-10">
-    <div className="animate-panda-bounce">
-        <div className="animate-bamboo-float will-change-transform">
-            <Image
-                src="/bamboo.png"
-                alt="Head to the Bamboo Forest"
-                width={350}
-                height={200}
-                className="cursor-pointer hover:scale-105 transition-transform duration-300"
-                onClick={() => window.open('https://lpanda-mint.vercel.app/', '_blank')}
-            />
+        <div className="absolute bottom-36 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-6 w-full max-w-2xl">
+            <div className="animate-panda-bounce">
+                <div className="animate-bamboo-float will-change-transform">
+                    <Image
+                        src="/bamboo.png"
+                        alt="Head to the Bamboo Forest"
+                        width={350}
+                        height={200}
+                        className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => window.open('https://lpanda-mint.vercel.app/', '_blank')}
+                    />
+                </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-16 px-4 py-2 mt-2">
+                <div className="animate-social-float-1 will-change-transform">
+                    <Link
+                        href="https://discord.gg/u3cdzGnKRH"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-3 hover:scale-110 transition-transform"
+                        aria-label="Discord"
+                    >
+                        <Image src="/Discord.jpg" alt="Discord" width={56} height={56} className="h-14 w-14 rounded-full object-cover shadow-lg" />
+                    </Link>
+                </div>
+
+                <div className="animate-social-float-2 will-change-transform">
+                    <Link
+                        href="https://www.tiktok.com/@lpandadex"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-3 hover:scale-110 transition-transform"
+                        aria-label="TikTok"
+                    >
+                        <Image src="/TikTok.jpg" alt="TikTok" width={56} height={56} className="h-14 w-14 rounded-full object-cover shadow-lg" />
+                    </Link>
+                </div>
+
+                <div className="animate-social-float-3 will-change-transform">
+                    <Link
+                        href="http://t.me/LPandaDEX"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-3 hover:scale-110 transition-transform"
+                        aria-label="Dex"
+                    >
+                        <Image src="/Dex.jpg" alt="Dex" width={56} height={56} className="h-14 w-14 rounded-full object-cover shadow-lg" />
+                    </Link>
+                </div>
+
+                <div className="animate-social-float-4 will-change-transform">
+                    <Link
+                        href="https://x.com/LPandaDEX"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-3 hover:scale-110 transition-transform"
+                        aria-label="X"
+                    >
+                        <Image src="/X.jpg" alt="X" width={56} height={56} className="h-14 w-14 rounded-full object-cover shadow-lg" />
+                    </Link>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
     </div>
 )}
 
                     {showBamboo && (
     <div className="block md:hidden absolute bottom-64 left-4 right-4 z-10">
 
-
-
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center justify-center gap-6">
             <div className="animate-panda-bounce">
                 <div className="animate-bamboo-float will-change-transform">
                     <Image
@@ -262,6 +333,56 @@ export default function HomePage() {
                         className="max-w-[200px] h-auto cursor-pointer hover:scale-105 transition-transform duration-300"
                         onClick={() => window.open('https://lpanda-mint.vercel.app/', '_blank')}
                     />
+                </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-10 px-2 py-2 mt-2 w-full max-w-[340px] mx-auto">
+                <div className="animate-social-float-1 will-change-transform">
+                    <Link
+                        href="https://discord.gg/u3cdzGnKRH"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-2.5 hover:scale-110 transition-transform"
+                        aria-label="Discord"
+                    >
+                        <Image src="/Discord.jpg" alt="Discord" width={48} height={48} className="h-12 w-12 rounded-full object-cover shadow-lg" />
+                    </Link>
+                </div>
+
+                <div className="animate-social-float-2 will-change-transform">
+                    <Link
+                        href="https://www.tiktok.com/@lpandadex"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-2.5 hover:scale-110 transition-transform"
+                        aria-label="TikTok"
+                    >
+                        <Image src="/TikTok.jpg" alt="TikTok" width={48} height={48} className="h-12 w-12 rounded-full object-cover shadow-lg" />
+                    </Link>
+                </div>
+
+                <div className="animate-social-float-3 will-change-transform">
+                    <Link
+                        href="http://t.me/LPandaDEX"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-2.5 hover:scale-110 transition-transform"
+                        aria-label="Dex"
+                    >
+                        <Image src="/Dex.jpg" alt="Dex" width={48} height={48} className="h-12 w-12 rounded-full object-cover shadow-lg" />
+                    </Link>
+                </div>
+
+                <div className="animate-social-float-4 will-change-transform">
+                    <Link
+                        href="https://x.com/LPandaDEX"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group inline-flex items-center justify-center rounded-full bg-black/30 p-2.5 hover:scale-110 transition-transform"
+                        aria-label="X"
+                    >
+                        <Image src="/X.jpg" alt="X" width={48} height={48} className="h-12 w-12 rounded-full object-cover shadow-lg" />
+                    </Link>
                 </div>
             </div>
         </div>
